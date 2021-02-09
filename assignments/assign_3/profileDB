@@ -1,0 +1,11 @@
+Create Table profile(
+firstname varchar(20),
+surname varchar(20),
+email varchar(30),
+mobile_no varchar(20),
+date_of_birth varchar(10),
+country varchar(20),
+password varchar(25),
+subscribe varchar(5),
+check_policy varchar(10)
+);

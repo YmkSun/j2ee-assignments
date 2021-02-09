@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<web-app>
+
+<display-name>Profile Info</display-name>
+
+<servlet>
+	<servlet-name>clientServer</servlet-name>
+	<servlet-class>profile.ClientServerInfoServlet</servlet-class>
+</servlet>
+
+<servlet-mapping>
+	<servlet-name>clientServer</servlet-name>
+	<url-pattern>/link</url-pattern>
+</servlet-mapping>
+
+<servlet>
+	<servlet-name>display</servlet-name>
+	<servlet-class>profile.ProfileDisplayServlet</servlet-class>
+</servlet>
+
+<servlet-mapping>
+	<servlet-name>display</servlet-name>
+	<url-pattern>/display</url-pattern>
+</servlet-mapping>
+
+
+<servlet>
+	<servlet-name>profile</servlet-name>
+	<servlet-class>profile.ProfileInfoServlet</servlet-class>
+</servlet>
+
+<servlet-mapping>
+	<servlet-name>profile</servlet-name>
+	<url-pattern>/profile</url-pattern>
+</servlet-mapping>
+
+<welcome-file-list>
+	<welcome-file>profile.html</welcome-file>
+</welcome-file-list>
+
+</web-app>

@@ -1,0 +1,7 @@
+Create table food_order(
+email varchar(30),
+order_type varchar(15),
+drink varchar(30),
+fruit varchar(30),
+qty varchar(10)
+);

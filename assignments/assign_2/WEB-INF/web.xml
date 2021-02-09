@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<web-app>
+
+<display-name>Student Information</display-name>
+
+<servlet>
+	<servlet-name>studentDisplay</servlet-name>
+	<servlet-class>student.StudentDisplay</servlet-class>
+</servlet>
+
+<servlet-mapping>
+	<servlet-name>studentDisplay</servlet-name>
+	<url-pattern>/studentForm2</url-pattern>
+</servlet-mapping>
+
+<servlet>
+	<servlet-name>studentInfo</servlet-name>
+	<servlet-class>student.StudentInfo</servlet-class>
+</servlet>
+
+<servlet-mapping>
+	<servlet-name>studentInfo</servlet-name>
+	<url-pattern>/studentForm1</url-pattern>
+</servlet-mapping>
+
+<welcome-file-list>
+	<welcome-file>studentForm1</welcome-file>
+</welcome-file-list>
+
+</web-app>

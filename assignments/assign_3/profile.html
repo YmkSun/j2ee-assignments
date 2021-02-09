@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Personal Details</title>
+</head>
+
+<body>
+
+<form action="profile" method="GET">
+
+<h2>YOUR PERSONAL DETAILS</h2>
+
+<table>
+
+<tr>
+<td><label>First Name:<span style="color:#F00">*</span></label></td>
+<td><input type="text" name="fname" size="20" /></td>
+</tr>
+
+<tr>
+<td><label>Surname<span style="color:#F00">*</span></label></td>
+<td><input type="text" name="sname" size="20" /></td>
+</tr>
+
+<tr>
+<td><label>E-Mail:<span style="color:#F00">*</span></label></td>
+<td><input type="email" name="email" size="20" /></td>
+</tr>
+
+<tr>
+<td><label>Mobile Number<span style="color:#F00">*</span></label></td>
+<td>
+<table>
+<td><input type="text" name="mobile1" size="2" />-</td>
+<td><input type="text" name="mobile2" size="13" /></td>
+</table></td>
+</tr>
+
+<tr>
+<td><label>Date of Brith:</label></td>
+<td><input type="text" name="dob" size="20" /></td>
+</tr>
+
+<tr>
+<td><label>Country:<span style="color:#F00">*</span></label></td>
+<td>
+<select name="country" size="1">
+<option>India</option>
+<option>Myanmar</option>
+<option>Japan</option>
+</select>
+</td>
+</tr>
+</table>
+
+<h2>YOUR PASSWORD</h2>
+
+<table>
+<tr>
+<td><label>Password<span style="color:#F00">*</span></label></td>
+<td><input type="password" name="password"></td>
+</tr>
+
+<tr>
+<td><label>Password Confirm<span style="color:#F00">*</span></label></td>
+<td><input type="password" name="pconfirm"></td>
+</tr>
+</table>
+
+<h2>NEWSLETTER</h2>
+
+<table>
+<tr>
+<td><label>Subscribe:</label></td>
+<td>
+<input type="radio" name="subs" value="Yes" checked>Yes
+<input type="radio" name="subs" value="No">No
+</td>
+</tr>
+</table>
+
+<input type="checkbox" name="check" value="Checked">I have read and agree to the <a href="privatePolicy" style="color:#F00">Private Policy</a>
+<input type="submit" name="continue" value="Continue" style="background:#600; color:white">
+
+
+</form>
+
+</body>
+</html>
