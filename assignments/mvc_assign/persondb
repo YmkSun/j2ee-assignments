@@ -1,0 +1,14 @@
+Create table persondb(
+firstname varchar(20),
+lastname varchar(20),
+email varchar(25),
+password varchar(20),
+address varchar(30),
+CONSTRAINT persondb_email_pk PRIMARY KEY (email)
+);
+
+Insert into persondb values('Phillip', 'Phillips', 'pphillips@gmail.com', '11111111', 'California, United States');
+Insert into persondb values('Ymk', 'Sun', 'ymksun@gmail.com', '11111111', 'Mandalay, Myanmar');
+Insert into persondb values('Margo', 'Sunner', 'margo@gmail.com', '11111111', 'Dali, India');
+
+Select * from persondb;

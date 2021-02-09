@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+    <constant name="struts.enable.DynamicMethodInvocation" value="false" />
+    <constant name="struts.devMode" value="true" />
+    <constant name="struts.custom.i18n.resources" value="/resource/Resource"/>
+
+    <package name="default" namespace="/" extends="struts-default">
+		
+		<action name="jobInsert" method="display" class="action.JobAction">
+			<result name="success">/pages/jobInsert.jsp</result>
+        </action>
+        
+        <action name="jobSearch">
+        	<result name="success">/pages/jobSearch.jsp</result>
+        </action>
+		
+        <action name="insert" method="insert" class="action.JobAction">
+            <result name="success">/pages/insertResult.jsp</result>
+        </action>
+        
+        <action name="search" method="search" class="action.JobAction">
+            <result name="success">/pages/searchResult.jsp</result>
+            <result name="error">/pages/jobSearch.jsp</result>
+        </action>
+        
+        <action name="insertToIndex">
+        	<result>/pages/jobIndex.jsp</result>
+        </action>
+        
+        <action name="searchToIndex">
+        	<result>/pages/jobIndex.jsp</result>
+        </action>
+        
+    </package>
+	
+</struts>

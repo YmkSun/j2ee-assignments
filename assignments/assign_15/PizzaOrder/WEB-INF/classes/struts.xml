@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+    <constant name="struts.enable.DynamicMethodInvocation" value="false" />
+    <constant name="struts.devMode" value="true" />
+    <constant name="struts.custom.i18n.resources" value="/resource/PizzaResource"/>
+
+    <package name="default" namespace="/" extends="struts-default">
+
+        <action name="pizzaorder" method="execute" class="action.OrderAction">
+            <result name="success">pages/success.jsp</result>
+            <result name="error">pages/order.jsp</result>
+            <result name="input">pages/order.jsp</result>
+        </action>
+        
+        <action name="" method="display" class="action.OrderAction">
+            <result name="success">pages/order.jsp</result>
+        </action>
+        
+        <action name="pizzaback">
+        	<result>pages/order.jsp</result>
+        </action>
+        
+    </package>
+	
+</struts>

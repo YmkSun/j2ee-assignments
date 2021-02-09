@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE validators PUBLIC
+        "-//Apache Struts//XWork Validator 1.0.2//EN"
+        "http://struts.apache.org/dtds/xwork-validator-1.0.2.dtd">
+        
+<validators>
+
+<field name="profile.firstname">
+	<field-validator type="requiredstring">
+		<message key="error.required"></message>
+	</field-validator>
+</field>
+
+<field name="profile.surname">
+	<field-validator type="requiredstring">
+		<message key="error.required"></message>
+	</field-validator>
+</field>
+
+<field name="profile.age">
+	<field-validator type="required">
+		<message key="error.required" />
+	</field-validator>
+	<field-validator type="int">
+		<param name="min">18</param>
+		<param name="max">40</param>
+		<message> Age needs to be between ${min} and ${max}.</message>
+	</field-validator>
+</field>
+
+<field name="profile.email">
+	<field-validator type="requiredstring">
+		<message key="error.required"></message>
+	</field-validator>
+	<field-validator type="email" >
+		<message key="error.invalid"></message>
+	</field-validator>
+</field>
+
+<field name="profile.mobile">
+	<field-validator type="requiredstring">
+		<message key="error.required" />
+	</field-validator>
+	<field-validator type="regex">
+		<param name="regex">^[0-9]{9}{12}$</param>
+		<message key="error.invalid" />
+	</field-validator>
+	<field-validator type="stringlength">
+		<param name="minLength">9</param>
+		<param name="maxLength">12</param>
+		<message>Mobile Number length must be between ${minLength} and ${maxLength}.</message>
+	</field-validator>
+</field>
+	
+<field name="profile.dateOfBirth">
+	<field-validator type="required">
+		<message key="error.required" />
+	</field-validator>
+	<field-validator type="date">
+		<param name="min">01/01/1975</param>
+		<param name="max">01/01/1997</param>
+		<message> Date of birth  needs to be between ${min} and ${max}.</message>
+	</field-validator>
+</field>
+
+<field name="profile.password" >
+	<field-validator type="requiredstring" >
+		<message key="error.required" /> 
+	</field-validator>	
+	<field-validator type="stringlength">
+		<param name="minLength">6</param>
+		<param name="trim">true</param>
+		<message key="error.invalid"> </message>
+	</field-validator>
+</field>
+
+<field name="profile.confirmPassword" >
+	<field-validator type="requiredstring" >
+		<message key="error.required" /> 
+	</field-validator>	
+	<field-validator type="stringlength">
+		<param name="minLength">6</param>
+		<param name="trim">true</param>
+		<message key="error.invalid"> </message>
+	</field-validator>
+</field>
+
+<field name="profile.country" >
+	<field-validator type="requiredstring" >
+		<message key="error.required" /> 
+	</field-validator>
+</field>
+
+<validator type="expression" short-circuit="true">
+	<param name="expression">profile.password == profile.confirmPassword</param>
+	<message> Password and Confirm Password do not match!!! </message>
+</validator>
+
+</validators>

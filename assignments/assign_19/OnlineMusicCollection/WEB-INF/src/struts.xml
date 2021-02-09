@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+    <constant name="struts.enable.DynamicMethodInvocation" value="false" />
+    <constant name="struts.devMode" value="true" />
+    <constant name="struts.custom.i18n.resources" value="/resource/MessageResource"/>
+
+    <package name="default" namespace="/" extends="struts-default">
+		
+		<action name="insertmusic" method="display" class="action.MusicAction">
+			<result name="success">/jsp/insermusiccd.jsp</result>
+			<result name="error">/jsp/errormusic.jsp</result>
+        </action>
+        
+        <action name="insertstudio">
+        	<result name="success">/jsp/createstudio.jsp</result>
+        </action>
+        
+        <action name="viewbyname" method="display" class="action.MusicAction">
+        	<result name="success">/jsp/musicbyname.jsp</result>
+        	<result name="error">/jsp/errormusic.jsp</result>
+        </action>
+        
+        <action name="viewbytitle" method="display" class="action.MusicAction">
+        	<result name="success">/jsp/musicbytitle.jsp</result>
+        </action>
+        
+        <action name="viewbytype">
+        	<result name="success">/jsp/select.jsp</result>
+        </action>
+		
+        <action name="mscinsert" method="insertMusicCD" class="action.MusicAction">
+            <result name="success">/jsp/musiccdsuccess.jsp</result>
+            <result name="input">/jsp/insermuciccd.jsp</result>
+            <result name="error">/jsp/errormusic.jsp</result>
+        </action>
+        
+        <action name="stoinsert" method="insertStudio" class="action.MusicAction">
+            <result name="success">/jsp/studiosuccess.jsp</result>
+            <result name="input">/jsp/createstudio.jsp</result>
+            <result name="error">/jsp/errormusic.jsp</result>
+        </action>
+        
+        <action name="mviewname" method="viewByName" class="action.MusicAction">
+            <result name="success">/jsp/musicnamesuccess.jsp</result>
+            <result name="input">/jsp/musicbyname.jsp</result>
+            <result name="error">/jsp/errormusic.jsp</result>
+        </action>
+        
+        <action name="mviewtitle" method="viewByTitle" class="action.MusicAction">
+            <result name="success">/jsp/musictitlesuccess.jsp</result>
+            <result name="input">/jsp/musicbytitle.jsp</result>
+            <result name="error">/jsp/errormusic.jsp</result>
+        </action>
+        
+        <action name="mviewtype" method="viewByType" class="action.MusicAction">
+            <result name="success">/jsp/musictypesuccess.jsp</result>
+            <result name="input">/jsp/select.jsp</result>
+            <result name="error">/jsp/errormusic.jsp</result>
+        </action>
+        
+        <action name="backtohome">
+        	<result>/jsp/index.jsp</result>
+        </action>
+                
+    </package>
+	
+</struts>

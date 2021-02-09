@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+    <constant name="struts.enable.DynamicMethodInvocation" value="false" />
+    <constant name="struts.devMode" value="true" />
+    <constant name="struts.custom.i18n.resources" value="MessageResources"/>
+
+    <package name="default" namespace="/" extends="struts-default">
+
+        <action name="accept" method="execute" class="student.StudentAcceptAction">
+            <result name="success">jsp/inquiry.jsp</result>
+             <result name="error">jsp/accept.jsp</result>
+            <result name="input">jsp/accept.jsp</result>
+        </action>
+        
+        <action name="inquiry" method="execute" class="student.StudentInquiryAction">
+            <result name="success">jsp/searchResult.jsp</result>
+            <result name="input">jsp/inquiry.jsp</result>
+            <result name="error">jsp/notfound.jsp</result>
+        </action>
+        
+        <action name="iback">
+        	<result>jsp/accept.jsp</result>
+        </action>
+        
+        <action name="sback">
+        	<result>jsp/inquiry.jsp</result>
+        </action>
+        
+        <action name="nback">
+        	<result>jsp/inquiry.jsp</result>
+        </action>
+        
+    </package>
+	
+</struts>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+    <constant name="struts.enable.DynamicMethodInvocation" value="false" />
+    <constant name="struts.devMode" value="true" />
+    <constant name="struts.custom.i18n.resources" value="/resource/MessageResource"/>
+
+    <package name="default" namespace="/" extends="struts-default">
+		
+		<action name="create" class="action.StudentAdminAction">
+			<result name="success">/jsp/createStudent.jsp</result>
+        </action>
+        
+        <action name="search">
+        	<result name="success">/jsp/searchStudent.jsp</result>
+        </action>
+        
+        <action name="edit">
+        	<result name="success">/jsp/editStudent.jsp</result>
+        </action>
+        
+        <action name="delete">
+        	<result name="success">/jsp/deleteStudent.jsp</result>
+        </action>
+		
+        <action name="insertstu" method="insertStu" class="action.StudentAdminAction">
+            <result name="success">/jsp/createSuccess.jsp</result>
+            <result name="error">/jsp/createStudent.jsp</result>
+        </action>
+        
+        <action name="searchstu" method="searchStu" class="action.StudentAdminAction">
+            <result name="success">/jsp/searchSuccess.jsp</result>
+            <result name="error">/jsp/searchStudent.jsp</result>
+        </action>
+        
+        <action name="editstu" method="searchStu" class="action.StudentAdminAction">
+            <result name="success">/jsp/updateStudent.jsp</result>
+            <result name="error">/jsp/editStudent.jsp</result>
+        </action>
+        
+        <action name="updatestu" method="updateStu" class="action.StudentAdminAction">
+            <result name="success">/jsp/updateSuccess.jsp</result>
+            <result name="error">/jsp/updateStudent.jsp</result>
+        </action>
+        
+        <action name="deletestu" method="deleteStu" class="action.StudentAdminAction">
+            <result name="success">/jsp/deleteSuccess.jsp</result>
+            <result name="error">/jsp/deleteStudent.jsp</result>
+        </action>
+        
+        <action name="createToIndex">
+        	<result>/jsp/index.jsp</result>
+        </action>
+        
+        <action name="searchToIndex">
+        	<result>/jsp/index.jsp</result>
+        </action>
+        
+        <action name="updateToIndex">
+        	<result>/jsp/index.jsp</result>
+        </action>
+        
+        <action name="deleteToIndex">
+        	<result>/jsp/index.jsp</result>
+        </action>
+        
+    </package>
+	
+</struts>

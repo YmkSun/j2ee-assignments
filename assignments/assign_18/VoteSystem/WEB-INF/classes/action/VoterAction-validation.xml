@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE validators PUBLIC
+        "-//Apache Struts//XWork Validator 1.0.2//EN"
+        "http://struts.apache.org/dtds/xwork-validator-1.0.2.dtd">
+
+<validators>
+
+<field name="votr.name" >
+	<field-validator type="requiredstring">
+		<message key="error.required" /> 
+	</field-validator>
+</field>
+
+<field name="votr.age">
+	<field-validator type="required">
+		<message key="error.required" />
+	</field-validator>
+	<field-validator type="int">
+		<param name="min">18</param>
+		<message> Age needs to be greater than ${min}.</message>
+	</field-validator>
+</field>
+
+<field name="votr.religion" >
+	<field-validator type="requiredstring">
+		<message key="error.required" /> 
+	</field-validator>
+</field>
+
+<field name="votr.vdetail.nrc" >
+	<field-validator type="requiredstring">
+		<message key="error.required" /> 
+	</field-validator>
+</field>
+
+<field name="votr.vdetail.township" >
+	<field-validator type="requiredstring">
+		<message key="error.required" /> 
+	</field-validator>
+</field>
+
+<field name="votr.vdetail.city" >
+	<field-validator type="requiredstring">
+		<message key="error.required" /> 
+	</field-validator>
+</field>
+
+<field name="votr.vdetail.phoneno" >
+	<field-validator type="requiredstring">
+		<message key="error.required" /> 
+	</field-validator>
+	<field-validator type="regex">
+		<param name="regex">^[0-9]{7}{12}$</param>
+		<message key="error.invalid" />
+	</field-validator>
+	<field-validator type="stringlength">
+		<param name="minLength">7</param>
+		<param name="maxLength">12</param>
+		<message>Phone Number length must be between ${minLength} and ${maxLength}.</message>
+	</field-validator>
+</field>
+
+</validators>

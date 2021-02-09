@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+    <constant name="struts.enable.DynamicMethodInvocation" value="false" />
+    <constant name="struts.devMode" value="true" />
+    <constant name="struts.custom.i18n.resources" value="/resource/MessageResource"/>
+
+    <package name="default" namespace="/" extends="struts-default">
+		
+		<action name="insertvtr" method="display" class="action.DisplayAction">
+			<result name="success">/jsp/insertVoter.jsp</result>
+			<result name="error">/jsp/errorVoter.jsp</result>
+        </action>
+        
+        <action name="insertpty">
+        	<result name="success">/jsp/insertParty.jsp</result>
+        </action>
+        
+        <action name="checkvtr">
+        	<result name="success">/jsp/checkVoter.jsp</result>
+        </action>
+        
+        <action name="searchvtr">
+        	<result name="success">/jsp/searchVoter.jsp</result>
+        </action>
+		
+        <action name="vtrinsert" method="insertVoter" class="action.VoterAction">
+            <result name="success">/jsp/voterSuccess.jsp</result>
+            <result name="input">/jsp/insertVoter.jsp</result>
+            <result name="error">/jsp/insertVoter.jsp</result>
+        </action>
+        
+        <action name="ptyinsert" method="insertParty" class="action.PartyAction">
+            <result name="success">/jsp/partySuccess.jsp</result>
+            <result name="input">/jsp/insertParty.jsp</result>
+            <result name="error">/jsp/insertParty.jsp</result>
+        </action>
+        
+        <action name="vtrcheck" method="checkVoter" class="action.CheckAction">
+            <result name="success">/jsp/checkSuccess.jsp</result>
+            <result name="input">/jsp/checkVoter.jsp</result>
+            <result name="error">/jsp/checkVoter.jsp</result>
+        </action>
+        
+        <action name="vtrsearch" method="searchVoter" class="action.SearchAction">
+            <result name="success">/jsp/searchSuccess.jsp</result>
+            <result name="input">/jsp/searchVoter.jsp</result>
+            <result name="error">/jsp/searchVoter.jsp</result>
+        </action>
+        
+        <action name="voterToIndex">
+        	<result>/jsp/index.jsp</result>
+        </action>
+        
+        <action name="partyToIndex">
+        	<result>/jsp/index.jsp</result>
+        </action>
+        
+        <action name="checkToIndex">
+        	<result>/jsp/index.jsp</result>
+        </action>
+        
+        <action name="searchToIndex">
+        	<result>/jsp/index.jsp</result>
+        </action>
+        
+         <action name="errorToIndex">
+        	<result>/jsp/index.jsp</result>
+        </action>
+        
+    </package>
+	
+</struts>

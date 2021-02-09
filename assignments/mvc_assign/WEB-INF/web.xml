@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<web-app>
+
+<display-name>User Profile Information JSP</display-name>
+
+<servlet>
+	<servlet-name>personServlet</servlet-name>
+	<servlet-class>person.PersonProfileServlet</servlet-class>
+</servlet>
+
+<servlet-mapping>
+	<servlet-name>personServlet</servlet-name>
+	<url-pattern>/personServlet</url-pattern>
+</servlet-mapping>
+
+<welcome-file-list>
+	<welcome-file>enquiry.jsp</welcome-file>
+</welcome-file-list>
+
+</web-app>
